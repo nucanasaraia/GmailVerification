@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api14.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250409111227_init")]
-    partial class init
+    [Migration("20250413114833_init3")]
+    partial class init3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,9 @@ namespace Api14.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordResetCode")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
